@@ -1,0 +1,105 @@
+
+html , body{ width : 100%; height : 100%; margin : 0 ; padding : 0; }
+
+header nav{
+    width : 100%;
+    height : 56px;
+    border-bottom : 1px solid #000;
+    box-shadow : 3px 0px 10px #000;
+}
+
+.index{ 
+    width : 100%; height : 100%; 
+    padding-top: 56px;
+}
+
+
+.index>.container{
+    min-width : 1500px;
+}
+
+.index .sidemenu{
+    width : 100%;
+    height : 100%;
+}
+
+.index .sidemenu .banner .banner-wrapper{
+    width : 100%;
+    height : 400px;
+}
+
+.index .sidemenu .banner .banner-wrapper .swiper-container{
+    height : 90%;
+}
+
+.index .sidemenu .banner .banner-wrapper .banner-pagination{
+    height : 10%;
+}
+.index .sidemenu .banner .banner-wrapper .banner-pagination .row{
+    height : 100%;
+}
+
+.index .sidemenu .banner .banner-wrapper .banner-pagination .banner-pagination-bullets span{
+    margin-right : 5px;
+}
+
+.index .sidemenu .focus-event-tabs .content .event-holder{
+    height : 100px;
+}
+.index .sidemenu .focus-event-tabs .content .event-holder .event-image{
+    height : 100%;
+}
+
+.index .main{
+    width : 100%;
+    height : 100%;
+}
+
+.index .main .main-banner{
+    width: 100%;
+    height : 400px;
+}
+
+.index .main .main-content .main-content-holder{
+    height : 100px;
+}
+.index .main .main-content .main-content-holder .main-content-item{
+    height : 100%
+}
+
+.dev header nav {
+    background-color: orange;
+}
+
+.dev header nav p{
+    font-size : 2em;
+    color : white;
+    text-align: center;
+}
+
+.dev .index{
+    background-color : #eee;
+}
+
+.dev .index .sidemenu {
+    background-color: #f7d984;
+}
+
+.dev .index .sidemenu .focus-event-tabs .content .event-holder .event-image{
+    background-color : red;
+    height : 100%;
+    color : white;
+}
+
+.dev .index .main .main-banner{
+    background-color : violet;
+}
+
+.dev .main{
+    background-color : #adb5bd;
+}
+
+.index .main .main-content .main-content-holder .main-content-item{
+    background-color : blue;
+    color : white;
+}

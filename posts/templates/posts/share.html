@@ -10,7 +10,6 @@
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>
-<!-- 브랜치를 새로 팠습니다.-->
 <body>
     <a id="kakao-link-btn" href="javascript:sendLink()">
         <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
@@ -24,11 +23,11 @@
             Kakao.Link.sendDefault({
                 objectType: 'location',
                 address: '{{ post.location }}',
-                addressTitle: '{{ post.location }}', //이거는 어디에 뜨는지 모르겠음...
+                addressTitle: '{{ post.location }}',
                 content: {
                     title: '{{ post.title }}',
-                    description: '{{ post.content }}',
-                    imageUrl: 'http://mud-kage.kakao.co.kr/dn/bSbH9w/btqgegaEDfW/vD9KKV0hEintg6bZT4v4WK/kakaolink40_original.png',
+                    description: '{{ post.image }}',
+                    imageUrl: 'http://127.0.0.1:8000/media/{{ post.image }}', //이거다! -  배포하면 될듯
                     link: {
                         mobileWebUrl: 'https://developers.kakao.com',
                         webUrl: 'https://developers.kakao.com'
@@ -52,6 +51,5 @@
         }
   //]]>
     </script>
-
 </body>
 
