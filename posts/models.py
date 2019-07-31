@@ -15,7 +15,7 @@ class Post(TimeStampedModel):
     title = CharField(max_length=100)
     content = TextField()
     view_count = IntegerField(default=0)
-    location = CharField(max_length=200)
+    location = CharField(max_length=200, help_text="정확한 장소를 입력해주세요.")
     image = ImageField(upload_to="img/", null=True)
     likes = ManyToManyField(User, related_name="liked_users")
 
