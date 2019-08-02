@@ -15,3 +15,15 @@ def home(request):
         'posts': posts
     }
     return render(request, 'home.html', context)
+
+
+def brwfb(request):
+    return render(request, 'brwfb.html')
+
+
+def brwjob(request):
+    return render(request, 'brwjob.html')
+
+
+def brwuse(request):
+    return render(request, 'brwuse.html')

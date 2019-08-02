@@ -1,4 +1,12 @@
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../style/brwshow.css">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Sunflower:300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport"
         content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
@@ -204,6 +212,89 @@
         조회수 : {{ post.view_count }}
     </p>
     <img src="{{ post.image.url }}" class="card-img-top" alt="등록된 사진이 없습니다">
+    
+    <!-- 댓글파트 -->
+    <form action="{% url 'posts:create_comment' post.pk %}" method="POST" style="margin-top: 50px;">
+        {% csrf_token %}
+        <div class="form-group">
+            <textarea class="form-control" name="message" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="댓글 달기..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary right">작성</button>
+    </form><br>
+    
+    {% if post.comments %}
+    <ul class="list-group" style="margin-top: 40px;">
+        {% for comment in post.comments %}
+        <li class="list-group-item">
+            <p>
+                <b>{{ comment.user.username }}</b>
+                {% if user == comment.user %}
+                <a href="{% url 'posts:delete_comment' comment.pk %}" class="right">삭제</a>
+                {% endif %}
+            </p>
+            <p>{{ comment.message }}</p>
+            <p class="star_rating">
+                <a href="#" class="on">★</a>
+                <a href="#">★</a>
+                <a href="#">★</a>
+                <a href="#">★</a>
+                <a href="#">★</a>
+            </p>
+            <style>
+                .star_rating {
+                    font-size: 0;
+                    letter-spacing: -4px;
+                }
+    
+                .star_rating a {
+                    font-size: 22px;
+                    letter-spacing: 0;
+                    display: inline-block;
+                    margin-left: 5px;
+                    color: #ccc;
+                    text-decoration: none;
+                }
+    
+                .star_rating a:first-child {
+                    margin-left: 0;
+                }
+    
+                .star_rating a.on {
+                    color: #777;
+                }
+            </style>
+            <script src="//code.jquery.com/jquery.min.js"></script>
+            <script>
+                $(".star_rating a").click(function () {
+                    $(this).parent().children("a").removeClass("on");
+                    $(this).addClass("on").prevAll("a").addClass("on");
+                    return false;
+                });
+            </script>
+        </li>
+        {% endfor %}
+    {% endif %}
+    <!-- 커스텀 템플릿 -->
+    <!-- <a id="kakao-link-btn" href="javascript:sendLink()">
+        <img src="//developers.kakao.com/assets/img/about/logos/kakaolink/kakaolink_btn_medium.png" />
+    </a>
+    <script type='text/javascript'>
+        //<![CDATA[
+        // // 사용할 앱의 JavaScript 키를 설정해 주세요.
+        Kakao.init('a9f8b19ee7403dcabd7b0e2d2cb91b62');
+        // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
+        function sendLink() {
+            Kakao.Link.sendCustom({
+                templateId: 17454,
+                templateArgs: {
+                    'title': '제목 영역입니다.',
+                    'description': '설명 영역입니다.'
+                }
+            });
+        }
+      //]]>
+    </script> -->
 
     <div class="map_wrap">
         <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
@@ -212,7 +303,7 @@
             <div class="option">
                 <div>
                     <form onsubmit="searchPlaces(); return false;">
-                        키워드 : <input type="text" value="이태원 맛집" id="keyword" size="15">
+                        키워드 : <input type="text" value="{{ post.location }}" id="keyword" size="15">
                         <button type="submit">검색하기</button>
                     </form>
                 </div>
@@ -487,14 +578,3 @@
       //]]>
     </script>
 </body>
-
-
-
-
-
-
-
-
-
-
-

@@ -9,7 +9,7 @@
         </button>
         <header>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">
                             <img src="{% static 'img/brw2.png' %}" class="logo">
@@ -26,6 +26,9 @@
                         <li class="nav-item">
                             <a class="nav-link" style="color : orange;" href="{% url 'account_logout' %}">로그아웃</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color : orange;" href="{% url 'posts:favourites' %}">내가 좋아요한 글</a>
+                        </li>
                     </ul>
 
                     {% else %}
@@ -40,10 +43,11 @@
                 </ul>
 
             </div>
-            <div class="find">
+            <!-- 일단 검색기능은 제외하고 합시다 -->
+            <!-- <div class="find">
                 <input type="text" placeholder="검색어 입력" class="find2">
                 <button class="find3"><a href="{% url 'home' %}">검색</a></button>
-            </div>
+            </div> -->
         </header>
     </nav>
 </div>

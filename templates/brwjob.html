@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>팀 보러왕</title>
+    <link rel="stylesheet" href="{% static 'css/brwjob.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Sunflower:300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="brwjoblogo1" >
+        <img class="brwjoblogo2" src="{% static 'img/brw2.png' %}"">
+        <p>때는 바야흐로 2019년, 멋쟁이 사자를 개박살내러온 리얼 숫사자 보러왕</p>
+    </div>
+    <div class="brwjobtext1">
+    <h2 class="brwjobtext2">
+        <span>오지는</span>  
+        <span>뒤지는</span> 
+        <span class="light">보러왕</span> 
+        <span>박살난</span>  
+        <span>최고의</span>
+    </h2>
+    </div>
+    <a href="{% url 'home' %}"><p>기대해라</p></a>
+</body>
+</html>

@@ -1,7 +1,7 @@
 html {
     background-color: orange;
-    padding-right: 500px;
-    padding-left:550px;
+    padding-right:30%;
+    padding-left:40%;
 }
 
 a {
@@ -37,7 +37,8 @@ form {
 }
 
 .brwloginlogo {
-    width: 70%;
+    width: 40%;
     margin-top: 20%;
-    margin-left: 2%;
+    margin-left: 16%;
+    margin-bottom: 5%;
 }

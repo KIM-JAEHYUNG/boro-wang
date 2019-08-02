@@ -10,17 +10,17 @@
                 <span class="card-title writer">글쓴이 : {{ post.user.username }}</span>
                 {% if user != post.user %}
                     {% if user in post.user.followers.all %}
-                        <a href="{% url 'users:follow_toggle' post.user.id %}" class="btn btn-primary right">팔로우 취소</a>
+                        <a href="{% url 'users:follow_toggle' post.user.id %}">팔로우 취소</a>
                     {% else %}
-                        <a href="{% url 'users:follow_toggle' post.user.id %}" class="btn btn-primary right">팔로우</a>
+                        <a href="{% url 'users:follow_toggle' post.user.id %}">팔로우</a>
                     {% endif %}
                 {% endif %}
-                <a href="{% url 'posts:show' post.pk %}" class="btn btn-primary right">상세보기</a>
+                
                 {% if user == post.user %}
-                <a href="{% url 'posts:delete' post.pk %}" class="btn btn-primary right"
-                    style="margin-left: 15px;">삭제</a>
-                <a href="{% url 'posts:edit' post.pk %}" class="btn btn-primary right">수정</a>
+                <a href="{% url 'posts:delete' post.pk %}" style="margin-left: 15px;">삭제</a>
+                <a href="{% url 'posts:edit' post.pk %}">수정</a>
                 {% endif %}
+            <a href="{% url 'posts:show' post.pk %}">상세보기</a>
             </div>
             {% if post.image %}
             <img src="{{ post.image.url }}" class="card-img-top" alt="...">
@@ -37,8 +37,8 @@
 
                 <p class="card-text" style="margin-top: 30px;">{{ post.content }}</p>
                 
-
-
+                
+                <!-- 댓글파트 -->
                 <form action="{% url 'posts:create_comment' post.pk %}" method="POST" style="margin-top: 50px;">
                     {% csrf_token %}
                     <div class="form-group">
@@ -46,7 +46,7 @@
                         <textarea class="form-control" name="message" id="exampleInputEmail1"
                             aria-describedby="emailHelp" placeholder="댓글 달기..."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary right">작성</button>
+                    <button type="submit">작성</button>
                 </form><br>
 
                 {% if post.comments %}
@@ -97,11 +97,7 @@
                                 $(this).addClass("on").prevAll("a").addClass("on");
                                 return false;
                             });
-
                         </script>
-
-
-
                     </li>
                     {% endfor %}
                 </ul>
