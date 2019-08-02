@@ -20,10 +20,12 @@ def create(request):
     return redirect('home')
 
 
-def share(request, id):
+def show(request, id):
     post = get_object_or_404(Post, pk=id)
+    default_view_count = post.view_count
+    post.view_count = default_view_count + 1
     post.save()
-    return render(request, 'posts/share.html', {'post': post})
+    return render(request, 'posts/show.html', {'post': post})
 
 def edit(request, id):
     post = get_object_or_404(Post, pk=id)
