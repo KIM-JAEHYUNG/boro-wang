@@ -514,3 +514,10 @@ body {font-family: Verdana, sans-serif; margin:0}
   height: 150px;
   overflow-y: auto;
 }
+
+element.style {
+    display: block;
+    width: %;
+    margin-top: 6px;
+    color: orange;
+}
