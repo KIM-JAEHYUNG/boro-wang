@@ -91,3 +91,4 @@ def favourites(request):
     user = request.user  # 로그인한 유저를 가져옴
     post = Post.objects.filter(likes=user.id)
     return render(request, 'posts/favourites.html', {'post': post})
+

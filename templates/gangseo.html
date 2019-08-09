@@ -1,0 +1,6 @@
+<h1>강서.html</h1>
+{% for posts in post %}
+<h1><br> {{ posts.title }}<br></h1>
+{% empty %}
+없음
+{% endfor %}

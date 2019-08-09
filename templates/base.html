@@ -1,68 +1,3 @@
-<!-- {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
-  <link rel="stylesheet" href="{% static 'style/base.css' %}">
-  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Sunflower:300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-</head>
-
-<body class='dev'>
-  <header>
-    <nav>
-      <div class="wrapper">
-        <img src="{% static 'img/brw2.png' %}" class="logo">
-        <a href="{% url 'home' %}">
-          <h1>보러왕</h1>
-        </a>
-        <ul class="menu22">
-          <li><a href="{% url 'account_login' %}">로그인</a></li>
-          <li><a href="#">공지</a></li>
-          <li><a href="#">서비스</a></li>
-          <li><a href="#">고객센터</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="find">
-      <input type="text" placeholder="검색어 입력" class="find2">
-      <button class="find3"><a href="../html/brw1.html">검색</a></button>
-    </div>
-  </header>
-
-  <footer class="fixed-bottom">
-    <div class="foot2">
-      <a href="../html/brwjob.html" target="_blank">회사소개</a> │ <a href="../html/brwuse.html" target="_blank">이용약관</a> │
-      <a href="../html/brwfb.html" target="_blank">개발자들</a> │ ⓒ 2019 보러왕 Corp.
-
-    </div>
-    <div>
-      <img class="brw3gif" src="{% static 'img/brw5.gif' %}">
-    </div>
-  </footer>
-</body>
-
-</html> -->
-
-
-
-
-
 {% load static %}
 <!doctype html>
 <html lang="en">
@@ -72,29 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  {% block css %}
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link href="{% static 'css/base.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">
+  <!-- 현재 페이지용 css 새로 불러옴 -->
+  <!-- css에서 하고있는 일은 확인해볼것 -->
+  <link rel="stylesheet" href="{ static 'css/brw3.css' }">
+
+  <!-- 구글 폰트를 불러옴 -->
   <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Sunflower:300&display=swap" rel="stylesheet">
-  {% endblock %}
 
-  <title>
-    {% block title %}
-    보러왕
-    {% endblock title %}
-  </title>
-</head>
+  <!-- 현재 페이지에 슬라이드가 많이 쓰이므로 swiper를 불러옴 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
 
-<body style="background-color : orange;">
-  {% include 'navbar.html' %}
-
-  {% block content %}
-  {% endblock %}
-
-
-
-  {% block js %}
+  <!-- 부트스트랩을 위해 스크립트를 불러옴 -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -104,35 +29,29 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-  <script src="{% static 'js/project.js' %}"></script>
+
+
+  {% block css %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="{% static 'css/project.css' %}" rel="stylesheet"> <!--base.css랑 proect.css 무슨 차이??-->
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Sunflower:300&display=swap" rel="stylesheet">
   {% endblock %}
-  <div class="btn">
-    <button class="bt btn-1">강서구</button>
-    <button class="bt btn-1">강남구</button>
-    <button class="bt btn-1">강동구</button>
-    <button class="bt btn-1">강북구</button>
-    <button class="bt btn-1">구로구</button>
-    <button class="bt btn-1">금천구</button>
-    <button class="bt btn-1">관악구</button>
-    <button class="bt btn-1">광진구</button>
-    <button class="bt btn-1"><a href="../html/brw3.html" target="_blank">노원구</a></button>
-    <button class="bt btn-1">도봉구</button>
-    <button class="bt btn-1">동대문구</button>
-    <button class="bt btn-1">동작구</button>
-    <button class="bt btn-1">마포구</button>
-    <button class="bt btn-1">서대문구</button>
-    <button class="bt btn-1">서초구</button>
-    <button class="bt btn-1">성동구</button>
-    <button class="bt btn-1">송파구</button>
-    <button class="bt btn-1">성북구</button>
-    <button class="bt btn-1">용산구</button>
-    <button class="bt btn-1">양천구</button>
-    <button class="bt btn-1">은평구</button>
-    <button class="bt btn-1">영등포구</button>
-    <button class="bt btn-1">종로구</button>
-    <button class="bt btn-1">중구</button>
-    <button class="bt btn-1">중랑구</button>
-  </div>
+
+  <title>
+    {% block title %}
+    보러왕
+    {% endblock title %}
+  </title>
+
+</head>
+
+<body>
+  {% include 'navbar.html' %}
+
+  {% block content %}
+  {% endblock %}
+
 </body>
 {% include 'footer.html' %}
 
@@ -140,6 +59,56 @@
 
 
 <style>
+  .aaa-1::after {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0;
+  }
+
+  .aaa-1:hover:after {
+    width: 100%;
+  }
+
+  .aa,
+  .aa:after {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  .aa {
+    background: none;
+    border: 6px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 1em auto;
+    padding: 1em 1em;
+    position: relative;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 2%;
+    width: 20%;
+    font-family: 'Jua', sans-serif;
+  }
+
+  .aa::before,
+  .aa::after {
+    background: white;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    border-radius: 20px;
+  }
+
+  .aa:hover {
+    color: orange;
+  }
+
   .foot2 {
     text-align: center;
     padding-bottom: 1%;
@@ -152,11 +121,29 @@
   html {
     /* 배경이미지 가운데 정렬하는거 */
     /* background: url('../img/지도1.png') no-repeat center center fixed; */
-    background-color: orange;
+
     /* background-size: 17% 65%; */
     /* -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; */
   }
+    .btn-1::after {
+      height: 100%;
+      left: 0;
+      top: 0;
+      width: 0;
+    }
+
+    .btn-1:hover:after {
+      width: 100%;
+    }
+
+    .aaa {
+      padding: 4em;
+      margin: 4% 7.5%;
+      width: 80%;
+    }
+
+  
 </style>

@@ -212,19 +212,39 @@
             <h1>보러왕</h1>
             <nav>
                 <!-- 메뉴바 -->
-                <ul class="menu">
-                    <li><a href="{% url 'account_login' %}">로그인</a></li>
-                    <li><a href="#">공지</a></li>
-                    <li><a href="#">서비스</a></li>
-                    <li><a href="#">고객센터</a></li>
-                </ul>
+            {% if request.user.is_authenticated %}
+            <ul class="menu" style="color : orange;">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color : orange;">{{ request.user }}님 반갑습니다</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color : orange;" href="{% url 'posts:new' %}">글 쓰기</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color : orange;" href="{% url 'posts:favourites' %}">내가 좋아요한 글</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color : orange;" href="{% url 'account_logout' %}">로그아웃</a>
+                </li>
+            </ul>
+
+            {% else %}
+            <ul class="menu" style="color : orange;" padding-left: "10px">
+                <li class="nav-item">
+                    <a class="nav-link" style="color : orange;" href="{% url 'account_login' %}">로그인</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color : orange;" href="{% url 'account_signup' %}">회원가입</a>
+                </li>
+            </ul>
+            {% endif %}
             </nav>
         </div>
         <!-- 검색창 -->
-        <div class="find">
+        <!-- <div class="find">
             <input type="text" placeholder="검색어 입력" class="find2">
             <button class="find3"><a href="../html/brw1.html">검색</a></button>
-        </div>
+        </div> -->
     </header>
 
 
@@ -234,6 +254,9 @@
             <div class="card_show">
                 <h2>{{ post.title }}</h2>
                 <h5>픽사 전시회, Dec 7, 2017</h5>
+                <h5>{{ post.shows }}</h5>
+                <h5>{{ post.areas }}</h5>
+                <h5>아니 이게 왜 정수로 받아져.. 한글로 받아져야하는데</h5>
                 <br>
                 <!-- <div class="fakeimg" style="height:400px;">Image</div> -->
                 <img src="{{ post.image.url }}" style="height:400px;" alt="등록된 사진이 없습니다"> 
@@ -515,7 +538,7 @@
                     </p>
                     <br>
                     <h3>가격</h3>
-                    <p>모델링 필요</p>
+                    <p>{{ post.price     }}</p>
                     <br>
                     <h3>조회수</h3>
                     <p>{{ post.view_count }}</p>
@@ -568,9 +591,14 @@
             <div class="card_show">
                 <h3>Popular Post</h3>
                 <br>
-                <div class="fakeimg">Image</div><br>
-                <div class="fakeimg">Image</div><br>
-                <div class="fakeimg">Image</div>
+                <img src="{% static 'img/4.png' %}" alt="광고1">
+                <br>
+                <img src="{% static 'img/8.png' %}" alt="광고2">                
+                <br>
+                <img src="{% static 'img/3.png' %}" alt="광고3">
+                <br>
+                <img src="{% static 'img/1.png' %}" alt="광고4">
+
             </div>
             <!-- <div class="card_show">
                     <h3>More1...</h3>

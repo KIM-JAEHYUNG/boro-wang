@@ -27,3 +27,34 @@ def brwjob(request):
 
 def brwuse(request):
     return render(request, 'brwuse.html')
+
+
+def gangseo(request):
+    post = Post.objects.filter(areas=15)
+    postt = Post.objects.filter(shows=1)
+    return render(request, 'gangseo.html', {'post': post&postt})
+
+
+def etc(request):
+    post = Post.objects.filter(shows=4)
+    return render(request, 'etc.html', {'post': post})
+
+
+def exhibition(request):
+    post = Post.objects.filter(shows=3)
+    return render(request, 'exhibition.html', {'post': post})
+
+
+def music(request):
+    post = Post.objects.filter(shows=0)
+    return render(request, 'music.html', {'post': post})
+
+
+def play(request):
+    post = Post.objects.filter(shows=1)
+    return render(request, 'play.html', {'post': post})
+
+
+def sport(request):
+    post = Post.objects.filter(shows=2)
+    return render(request, 'sport.html', {'post': post})

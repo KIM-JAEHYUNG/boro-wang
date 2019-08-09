@@ -385,7 +385,7 @@ p{font-family: 'Jua', sans-serif; color:white;}
   text-decoration: none;
 }
 .show_star{
-  display: block
+  display: block;
   width: 25%;
   margin-top: 6px;
 
