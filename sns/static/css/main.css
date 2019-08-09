@@ -93,7 +93,7 @@ a {
 }
 
 .wrapper {
-    width: 1500px;
+    width: 100%;
     margin: 0 auto;
 }
 .bt.btn-1 a {
@@ -310,11 +310,26 @@ body {font-family: Verdana, sans-serif; margin:0}
 }
 /* 지역버튼 */
 .btn {
-    padding: 7% 5% 2% 5%;
+    padding: 2% 5% 2% 5%;
     margin:0%;
     width: 100%;
     background-color: orange;
-    box-shadow: 1px 2px 9px 0 black;
+    box-shadow: 0px 2px 9px 0 black;
+  }
+
+  .brwmainbod {
+    width: 70%;
+    height: 70%;
+    margin-left: 15%;
+    background-color: aqua;
+    border-radius: 0!important;
+    box-shadow: 0px 10px 50px  black;
+  }
+
+  .Back {
+    background-color: #E6FFFF;
+    margin-top: 30px;
+
   }
 
 
