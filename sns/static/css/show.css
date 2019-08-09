@@ -285,7 +285,7 @@ p{font-family: 'Jua', sans-serif; color:white;}
 
   /* 수정/삭제버튼 */
   .button {
-    display: inline-block;
+    display: block;
     padding: 15px 25px;
     font-size: 24px;
     font-family: 'Jua', sans-serif;
@@ -299,6 +299,7 @@ p{font-family: 'Jua', sans-serif; color:white;}
     border-radius: 15px;
     box-shadow: 0 9px #ff5d08;
     margin-right: 30px;
+    margin: 10%;
   }
   
   .button:hover {background-color: #ff5d08}
@@ -398,14 +399,12 @@ p{font-family: 'Jua', sans-serif; color:white;}
   border-radius: 15px;
   background-color: orange;
   border-radius: 30px;
-  width: 90%;
+  width: 600%;
   margin-left: auto;
   margin-right: auto;
   margin-right: auto;
   height: auto;
   padding: 20px;
-                          
-
 }
 .card_show_bt{
   padding: 55px;
