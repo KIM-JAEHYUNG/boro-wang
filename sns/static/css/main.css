@@ -502,3 +502,14 @@ body {font-family: Verdana, sans-serif; margin:0}
 
 /* Add a grey background color on mouse-over */
 .pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+.main_card_img {
+  height: 200px;
+  overflow-y: hidden;
+}
+
+.main_card_content {
+  height: 150px;
+  overflow-y: auto;
+}

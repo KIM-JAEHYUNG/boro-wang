@@ -202,7 +202,9 @@
                 {% endif %}
             </div>
             {% if post.image %}
-            <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+            <div class="main_card_img">
+                <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+            </div>
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{ post.title }}</h5>
@@ -216,8 +218,9 @@
                 {% endif %}
 
                 
-
-                <p class="card-text" style="margin-top: 30px;  margin: 15px;">{{ post.content }}</p>
+                <div class="main_card_content">
+                    <p class="card-text" style="margin-top: 30px;  margin: 15px;">{{ post.content }}</p>
+                </div>
                 <p class="star_rating" style=" display: block; width: 25%; margin-top: 6px; color: orange;">
                     <a href="#" class="on">★</a>
                     <a href="#">★</a>
