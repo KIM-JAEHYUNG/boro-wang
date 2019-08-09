@@ -1,0 +1,477 @@
+html {
+    /* 배경이미지 가운데 정렬하는거 */
+    /* background: url('../img/지도1.png') no-repeat center center fixed; */
+    background-color: orange;
+    /* background-size: 17% 65%; */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+}
+
+input:-ms-input-placeholder {
+    color: orange;
+}
+
+input:-webkit-input-placeholder {
+    color: orange;
+}
+
+input:-moz-input-placeholder {
+    color: orange;
+}
+.box {
+    position: relative;
+    width: 50%; /* 원하는 너비 */
+}
+ 
+.box:before {
+    content: "";
+    display: block;
+    padding-top: 100%; /* 1:1 비율 */
+}
+ 
+.content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.find {
+    height: 53%;
+    width: 20%;
+    border: 1px solid orange;
+    background: white;
+    position: relative;
+    left: 40%;  
+    bottom: -18px;
+}
+
+.find2 {
+    font-size: 16px;
+    width: 70%;
+    padding: 9px;
+    border: 0px;
+    outline: none;
+    float: left;
+    position: relative;
+    bottom: 180%;  
+    font-family: 'Jua', sans-serif;
+}
+
+.find3 {
+    width: 15%;
+    height: 100%;
+    border: 0px;
+    background: orange;
+    outline: none;
+    float: right;
+    color: white;
+    position: relative;
+    left: 0%;
+    bottom:185%;  
+    font-family: 'Jua', sans-serif;
+}
+
+.find3 a {
+    color:white;
+}
+
+.logo {
+    max-width: 4%;
+    max-height: 2%;
+    float: left;
+    margin-top: 0.9%;
+    margin-right: 1.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    font-family: 'Sunflower', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 1500px;
+    margin: 0 auto;
+}
+.bt.btn-1 a {
+    color:white;
+    transition-duration: 0.3s
+}
+.bt.btn-1:hover > a {
+    color:orange;
+    text-decoration: none;
+    transition-duration: 0.3s
+}
+
+
+.clearfix {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+header {
+    height: 75px;
+    background-color: white;
+    border: 1px solid #253342;
+    /* 도시 선택 페이지 메뉴에 밑부분 그림자 주는거 */
+    box-shadow:3px 0px 10px #000;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+    color: orange;
+    line-height: 75px;
+    float: left;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 50px;
+}
+
+.menu {
+    float: right;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu a {
+    line-height: 75px;
+    color: white;
+    padding: 0 15px;
+    display: block;
+    line-height: 75px;
+    color: orange;
+    /* 글씨 굵기 정하는 속성 */
+    font-weight: bolder;
+}
+/* a태그 밑줄 글씨색 없애기 */
+/* body {
+    font-size: 62.5%;
+  } */
+
+  /* moon */
+
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn { 
+    float: left;
+    width: 70%;
+    padding-left: 10px;
+  }
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  /* Add a card effect for articles */
+  .card_show {
+    padding: 55px;
+    margin-top: 100px;
+    
+  }
+  
+  /* Clear floats after the columns */
+  .row_show:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn { 
+      width: 100%;
+      padding: 0;
+    }
+  }
+  /* 가격,조회수,수정,삭제,카카오로 보내기 */
+  .rightcolumn {
+    float: left;
+    width: 23%;
+    padding-left: 20px;
+    padding-left: 10px;
+  }
+  /* Footer */
+  .foot2 {
+    text-align: center;
+    padding-bottom: 5%;
+    padding-top: 5%;
+    color: white;
+    font-family: 'Jua', sans-serif;
+    font-size: 90%;
+  }
+  
+  .foot2 a {
+      color: white;
+  }
+  .footer_bt{
+    float: top;
+    width: 30%;
+    padding-left: 500px;   
+  }
+/* 
+.card_t_r{
+    background-color:#aaa;
+} */
+.card_2 {
+    padding: 55px;
+    margin-top: 20px;
+  }
+/* font */
+h3{font-family: 'Jua', sans-serif; color:white;}
+h2{font-family: 'Jua', sans-serif; color:white;}
+h5{font-family: 'Jua', sans-serif; color:white;}
+p{font-family: 'Jua', sans-serif; color:white;}
+/* 스크롤 위로 보내기 */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+/* 카카오로보내기 */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+
+  /* 수정/삭제버튼 */
+  .button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    font-family: 'Jua', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: orange;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #ff5d08;
+    margin-right: 30px;
+  }
+  
+  .button:hover {background-color: #ff5d08}
+  
+  .button:active {
+    background-color: #ff5d08;
+    box-shadow: 0 5px white;
+    transform: translateY(4px);
+  }
+/* 더보기 버튼 */
+.button_more {
+  border-radius: 4px;
+  background-color: white;
+  border: none;
+  color: orange;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  font-family: 'Jua', sans-serif;
+  border-radius: 15px;
+}
+
+.button_more span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button_more span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button_more:hover span {
+  padding-right: 25px;
+}
+
+.button_more:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* scroll */
+
+.header {
+  z-index: 1;
+  background-color: orange;
+}
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: white;
+}
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #ff5d08;
+  width: 0%;
+}
+#scroll{
+  overflow:auto;
+  width: 100%;
+  height: 300px;
+}
+/* 별점 */
+
+.checked {
+  color: white;
+}
+.fa {
+  padding: unset;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+.show_star{
+  display: block;
+  width: 25%;
+  margin-top: 6px;
+
+
+}
+
+/* 댓글창 */
+.centercolumn{
+  border: 6px solid white;
+  border-radius: 15px;
+  background-color: orange;
+  border-radius: 30px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-right: auto;
+  height: auto;
+  padding: 20px;
+                          
+
+}
+.card_show_bt{
+  padding: 55px;
+  height: 5px;
+  width: 1300px;
+}
+
+.row_show_2{
+  content: "";
+  display: table;
+  clear: both;
+ 
+}
+/* 댓글달기 */
+.input_comment[type=text], select, textarea{
+  width: 99%;
+  padding: 12px;
+  border: 5px solid orange;
+  border-radius: 15px;
+  box-sizing: border-box;
+  resize: vertical;
+  height: 180px;
+  font-family: 'Jua', sans-serif;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+.input_comment[type=submit] {
+  background-color:white;
+  color: orange;
+  padding: 20px 35px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  float: right;
+  margin-right: 130px;
+  margin-top: 130px;
+  font-family: 'Jua', sans-serif;
+  font-size: 16px;
+}
+.container_show_comment {
+  padding: 55px;
+  height: 250px;
+  width: 1300px;
+}
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  display: block;
+}
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+.row_comment:after {
+  content: "";
+  display: table;
+  clear: both;
+  row_coment
+}
+.c{
+  font-family: 'Do Hyeon', sans-serif;
+  color:white;
+
+}
+

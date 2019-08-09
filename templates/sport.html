@@ -1,0 +1,164 @@
+{% load static %}
+<h1>sport.html</h1>
+<!-- {% for posts in post %}
+<h1><br> {{ posts.title }}<br></h1>
+{% empty %}
+없음
+{% endfor %} -->
+
+<div class="container" style="margin-top: 50px; margin-bottom: 200px;">
+    <div class="row">
+        {% for posts in post %}
+        <!-- <div class="col-12"> -->
+        <div class="card col-4" style="width: 18rem; margin-top: 30px; margin-right:20px; box-shadow: 0 5px 9px 0 rgba(251, 162, 0, 0.64);
+            max-width: 400px;
+            margin: auto;
+            text-align: left;
+            padding: 30px;
+            border-radius: 30px;
+            font-family: 'Jua', sans-serif;
+            display: table-cell;">
+            <div class="post-buttons" style="margin-top:10px; margin-bottom:10px;">
+                <span class="card-title writer" style="color: orange;
+                    font-size: 18px;
+                    text-align: left;
+                    font-family: 'Jua', sans-serif;">글쓴이 : {{ posts.user.username }}<br></span>
+                {% if user != posts.user %}
+                {% if user in posts.user.followers.all %}
+                <a href="{% url 'users:follow_toggle' posts.user.id %}" class="btn btn-warning right" style=" border: none;
+                            outline: 0;
+                            display: inline-block;
+                            padding: 4px;
+                            color: white;
+                            background-color: orange;
+                            text-align: center;
+                            cursor: pointer;
+                            width: 30%;
+                            font-size: 13px;
+                            border-radius: 30px;
+                            font-family: 'Jua', sans-serif;">팔로우 취소</a>
+                {% else %}
+                <a href="{% url 'users:follow_toggle' posts.user.id %}" class="btn btn-warning  right" style=" border: none;
+                            outline: 0;
+                            display: inline-block;
+                            padding: 4px;
+                            color: white;
+                            background-color: orange;
+                            text-align: center;
+                            cursor: pointer;
+                            width: 30%;
+                            font-size: 13px;
+                            border-radius: 30px;
+                            font-family: 'Jua', sans-serif;">팔로우</a>
+                {% endif %}
+                {% endif %}
+                <a href="{% url 'posts:show' posts.pk %}" class="btn btn-warning right" style=" border: none;
+                    outline: 0;
+                    display: inline-block;
+                    padding: 4px;
+                    color: white;
+                    background-color: orange;
+                    text-align: center;
+                    cursor: pointer;
+                    width: 30%;
+                    font-size: 13px;
+                    border-radius: 30px;
+                    font-family: 'Jua', sans-serif;">상세보기</a>
+                {% if user == posts.user %}
+                <a href="{% url 'posts:delete' posts.pk %}" class="btn btn-warning  right" style=" border: none;
+                    outline: 0;
+                    display: inline-block;
+                    padding: 4px;
+                    color: white;
+                    background-color: orange;
+                    text-align: center;
+                    cursor: pointer;
+                    width: 30%;
+                    font-size: 13px;
+                    border-radius: 30px;
+                    font-family: 'Jua', sans-serif;">삭제</a>
+                <a href="{% url 'posts:edit' posts.pk %}" class="btn btn-warning  right" style=" border: none;
+                    outline: 0;
+                    display: inline-block;
+                    padding: 4px;
+                    color: white;
+                    background-color: orange;
+                    text-align: center;
+                    cursor: pointer;
+                    width: 30%;
+                    font-size: 13px;
+                    border-radius: 30px;
+                    font-family: 'Jua', sans-serif;">수정</a>
+                {% endif %}
+            </div>
+            {% if posts.image %}
+            <img src="{{ posts.image.url }}" class="card-img-top" alt="...">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ posts.title }}</h5>
+                <h5 class="card-title">장소 : {{ posts.location }}</h5>
+                <h5 class="card-title">가격 : {{ posts.price }}</h5>
+                {{ posts.likes_count }}명이 좋아합니다.
+                {% if user in posts.likes.all %}
+                <a href="{% url 'posts:like_toggle' posts.id %}">좋아요 취소</a>
+                {% else %}
+                <a href="{% url 'posts:like_toggle' posts.id %}">좋아요</a>
+                {% endif %}
+
+
+
+                <p class="card-text" style="margin-top: 30px;  margin: 15px;">{{ posts.content }}</p>
+                <p class="star_rating" style=" display: block; width: 25%; margin-top: 6px; color: orange;">
+                    <a href="#" class="on">★</a>
+                    <a href="#">★</a>
+                    <a href="#">★</a>
+                    <a href="#">★</a>
+                    <a href="#">★</a>
+                </p>
+                <style>
+                    .star_rating {
+                        font-size: 0;
+                        letter-spacing: -4px;
+                    }
+
+                    .star_rating a {
+                        font-size: 22px;
+                        letter-spacing: 0;
+                        display: inline-block;
+                        margin-left: 5px;
+                        color: #ccc;
+                        text-decoration: none;
+                    }
+
+                    .star_rating a:first-child {
+                        margin-left: 0;
+                    }
+
+                    .star_rating a.on {
+                        color: orange;
+                    }
+
+                    .back {
+                        background-image: url("{% static 'img/main_background.png' %}");
+                    }
+                </style>
+                <script src="//code.jquery.com/jquery.min.js"></script>
+                <script>
+                    $(".star_rating a").click(function () {
+                        $(this).parent().children("a").removeClass("on");
+                        $(this).addClass("on").prevAll("a").addClass("on");
+                        return false;
+                    });
+                </script>
+
+
+
+
+                <br>
+
+            </div>
+        </div>
+        <!-- </div> -->
+        {% endfor %}
+    </div>
+</div>

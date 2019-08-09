@@ -1,0 +1,235 @@
+html {
+    /* 배경이미지 가운데 정렬하는거 */
+    /* background: url('../img/지도1.png') no-repeat center center fixed; */
+    background-color: orange;
+    /* background-size: 17% 65%; */
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
+}
+
+input:-ms-input-placeholder {
+    color: orange;
+}
+
+input:-webkit-input-placeholder {
+    color: orange;
+}
+
+input:-moz-input-placeholder {
+    color: orange;
+}
+.box {
+    position: relative;
+    width: 50%; /* 원하는 너비 */
+}
+ 
+.box:before {
+    content: "";
+    display: block;
+    padding-top: 100%; /* 1:1 비율 */
+}
+ 
+.content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.find {
+    height: 53%;
+    width: 20%;
+    border: 1px solid orange;
+    background: white;
+    position: relative;
+    left: 40%;  
+    bottom: -18px;
+}
+
+.find2 {
+    font-size: 16px;
+    width: 70%;
+    padding: 9px;
+    border: 0px;
+    outline: none;
+    float: left;
+    position: relative;
+    bottom: 180%;  
+    font-family: 'Jua', sans-serif;
+}
+
+.find3 {
+    width: 15%;
+    height: 100%;
+    border: 0px;
+    background: orange;
+    outline: none;
+    float: right;
+    color: white;
+    position: relative;
+    left: 0%;
+    bottom:185%;  
+    font-family: 'Jua', sans-serif;
+}
+
+.find3 a {
+    color:white;
+}
+
+.logo {
+    max-width: 4%;
+    max-height: 2%;
+    float: left;
+    margin-top: 0.9%;
+    margin-right: 1.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    font-family: 'Sunflower', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    width: 1500px;
+    margin: 0 auto;
+}
+.bt.btn-1 a {
+    color:white;
+    transition-duration: 0.3s
+}
+.bt.btn-1:hover > a {
+    color:orange;
+    text-decoration: none;
+    transition-duration: 0.3s
+}
+
+
+.clearfix {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+header {
+    height: 75px;
+    background-color: white;
+    border: 1px solid #253342;
+    /* 도시 선택 페이지 메뉴에 밑부분 그림자 주는거 */
+    box-shadow:3px 0px 10px #000;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+    color: orange;
+    line-height: 75px;
+    float: left;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 50px;
+}
+
+.menu {
+    float: right;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu a {
+    line-height: 75px;
+    color: white;
+    padding: 0 15px;
+    display: block;
+    line-height: 75px;
+    color: orange;
+    /* 글씨 굵기 정하는 속성 */
+    font-weight: bolder;
+}
+/* a태그 밑줄 글씨색 없애기 */
+/* body {
+    font-size: 62.5%;
+  } */
+  
+.btn {
+    padding: 4em;
+    margin: 4% 7.5%;
+    width: 80%;
+  }
+
+.bt,
+.bt::after {
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.bt {
+  background: none;
+  border: 6px solid #fff;
+  border-radius: 30px;
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: normal;
+  margin:1em auto;
+  padding: 1em 1em;
+  position: relative;
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 2%;
+  width: 20%;
+  font-family: 'Jua', sans-serif;
+}
+
+.bt::before,
+.bt::after {
+  background: white;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.bt:hover {
+  color: orange;
+}
+
+.btn-1::after {
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 0;
+  }
+  
+  .btn-1:hover:after {
+    width: 100%;
+  }
+
+  .foot2 {
+    text-align: center;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    color: white;
+    font-family: 'Jua', sans-serif;
+    font-size: 90%;
+  }
+  
+  .foot2 a {
+      color: white;
+  }

@@ -1,48 +1,71 @@
-{% extends "account/base.html" %}
-
+{% load static %}
 {% load i18n %}
 {% load account socialaccount %}
 {% load crispy_forms_tags %}
-
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
-
 {% block inner %}
-
-<h1>{% trans "Sign In" %}</h1>
-
 {% get_providers as socialaccount_providers %}
 
-{% if socialaccount_providers %}
-<p>{% blocktrans with site.name as site_name %}Please sign in with one
-of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
-for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>보러왕으로 로그인</title>
+  <link rel="stylesheet" href="{% static 'css/brwlogin.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua|Sunflower:300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</head>
 
-<div class="socialaccount_ballot">
+<body>
+  <div>
+    <img class="brwloginlogo" src="{% static 'img/brw2.png' %}">
+  </div>
+  {% if socialaccount_providers %}
+  <p>{% blocktrans with site.name as site_name %}보러왕은 카카오 계정으로 로그인 할 수 있습니다.{% endblocktrans %}</p>
 
-  <ul class="socialaccount_providers">
-    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
-  </ul>
+  <div class="socialaccount_ballot">
 
-  <div class="login-or">{% trans 'or' %}</div>
+    <div class="socialaccount_providers">
+      <!-- {% include "socialaccount/snippets/provider_list.html" with process="login" %} -->
+      <a id="custom-login-btn" href="/accounts/kakao/login/?process=login">
+        <!-- **** http://127.0.0.1:8000 -> 로컬 주소입니다. 런칭해서 주소 확정되면 바꿔주세요 **** -->
+        <!-- 굳이 그럴 필요 없음 -->
+        <img src="//mud-kage.kakao.com/14/dn/btqbjxsO6vP/KPiGpdnsubSq3a0PHEGUK1/o.jpg" width="300" />
+      </a>
+    </div>
 
-</div>
+    <div class="login-or">{% trans '보러왕에 처음이신가요?' %}</div>
+    <a href="{{ signup_url }}">회원가입</a>
+    <div class="login-or">{% trans '이미 보러왕 계정이 있으시다구요?' %}</div>
 
-{% include "socialaccount/snippets/login_extra.html" %}
+  </div>
 
-{% else %}
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
-{% endif %}
+  {% include "socialaccount/snippets/login_extra.html" %}
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form|crispy }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% else %} <!--우리는 소셜 로그인 있어서 else문 안돌아감-->
+  <p>{% blocktrans %}If you have not created an account yet, then please
+  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
   {% endif %}
-  <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-  <button class="primaryAction btn btn-primary" type="submit">{% trans "Sign In" %}</button>
-</form>
 
-{% endblock %}
+  <form class="login" method="POST" action="{% url 'account_login' %}">
+    {% csrf_token %}
+    {{ form|crispy }}
+    {% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "비밀번호 찾기" %}</a>
+    <button class="primaryAction btn btn-primary" type="submit">{% trans "보러왕으로 로그인" %}</button>
+  </form>
 
+  {% endblock %}
+
+</body>

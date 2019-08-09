@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>보러왕</title>
+    <link rel="stylesheet" href="{% static 'css/brw1.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Jua&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- <div class="logo1">
+        <img src="../img/brw2.png" class="logo fixed-top">
+    </div> -->
+    <div>
+        <div></div>
+        <p class="p1">보러왕<br>
+            <p class="p2">보러왕은 문화 생활을 찾아 헤매이는 절실하고 궁핍한 사람들에게<br>
+                색다르고 보다 다양한 문화컨텐츠를 제공하고 삶의 수준을 높혀줍니다</p>
+        </p>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6" class="div1">
+        <a href="{% url 'home' %}" class="btn btn-sm animated-button thar-three">Get Start</a>
+    </div>
+</body>
+
+</html>

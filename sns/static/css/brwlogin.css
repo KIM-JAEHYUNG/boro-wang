@@ -1,0 +1,44 @@
+html {
+    background-color: orange;
+    padding-right:30%;
+    padding-left:40%;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+body {
+    background-color: orange!important;
+    color: white!important;
+    font-family: 'Jua', sans-serif!important;
+}
+
+.form-control {
+    width: 71%!important;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    margin-top: 29px;
+}
+
+.btn {
+    width: 92.5%!important;
+    background-color: #fff!important;
+    color: orange!important;
+    border: 0px solid white!important;
+}
+
+.brwloginlogo {
+    width: 40%;
+    margin-top: 20%;
+    margin-left: 16%;
+    margin-bottom: 5%;
+}

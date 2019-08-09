@@ -1,0 +1,66 @@
+html {
+    /* 배경이미지 가운데 정렬하는거 */
+    /* background: url('../img/지도1.png') no-repeat center center fixed; */
+    background-color: orange;
+    background-size: 100%;
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;*/
+    background-size: cover; 
+}
+h1 {
+    font-size: 150px;
+    text-align: center;
+    color: white;
+    font-family: 'Do Hyeon', sans-serif;
+    margin-bottom: 10px;
+    text-shadow: 2px 8px 2px gray;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-family: 'Jua', sans-serif;
+    border: none;
+}
+
+a {
+    color:white;
+    text-decoration: none;
+    transition-duration: 0.3s
+}
+
+.instarhr {
+    width: 400px;
+    color: white;
+    size: 0px;
+    text-align:center;
+    margin-bottom: 50px;
+
+}
+
+/* 텍스트 무지개 효과 */
+a:hover, a:focus { animation-duration: 1s; animation-name: rainbowLink; animation-iteration-count: infinite; } 
+@keyframes rainbowLink {     
+ 0% { color: #ff2a2a; }
+ 15% { color: #ff7a2a; }
+ 30% { color: #ffc52a; }
+ 45% { color: #43ff2a; }
+ 60% { color: #2a89ff; }
+ 75% { color: #202082; }
+ 90% { color: #6b2aff; } 
+ 100% { color: #e82aff; }
+}
+
+h1:hover, h1:before, h1:focus { animation-duration: 1s; animation-name: rainbowLink; animation-iteration-count: infinite; } 
+@keyframes rainbowLink {     
+ 0% { color: #ff2a2a; }
+ 15% { color: #ff7a2a; }
+ 30% { color: #ffc52a; }
+ 45% { color: #43ff2a; }
+ 60% { color: #2a89ff; }
+ 75% { color: #202082; }
+ 90% { color: #6b2aff; } 
+ 100% { color: #e82aff; }
+}

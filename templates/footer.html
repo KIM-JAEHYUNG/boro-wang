@@ -1,1 +1,27 @@
 {% load static %}
+
+<footer>
+    <div class="foot2" style="color: orange">
+        <a href="{% url 'brwjob' %}" target="_blank" style="color: orange">회사소개</a>
+        <a href="{% url 'brwuse' %}" target="_blank" style="color: orange">이용약관</a>
+        <a href="{% url 'brwfb' %}" target="_blank" style="color: orange">개발자들</a>
+        ⓒ 2019 보러왕 Corp.
+
+    </div>
+    <div>
+        <img class="brw3gif" src="{% static 'img/brw5.gif' %}"
+            style="background-image: trasparant; display:inline-block;   width: 1510px; height:300px;">
+    </div>
+</footer>
+
+<style>
+    .foot2 {
+        text-align: center;
+        padding-bottom: 1%;
+        padding-top: 1%;
+        color: orange;
+        font-family: 'Jua', sans-serif;
+        font-size: 90%;
+
+    }
+</style>

@@ -20,10 +20,12 @@ def create(request):
     return redirect('home')
 
 
-def share(request, id):
+def show(request, id):
     post = get_object_or_404(Post, pk=id)
+    default_view_count = post.view_count
+    post.view_count = default_view_count + 1
     post.save()
-    return render(request, 'posts/share.html', {'post': post})
+    return render(request, 'posts/show.html', {'post': post})
 
 def edit(request, id):
     post = get_object_or_404(Post, pk=id)
@@ -83,3 +85,10 @@ def like_toggle(request, post_id):
 
     return redirect('home')
     
+
+def favourites(request):
+    ##user_like=User.likes_user_set.all()
+    user = request.user  # 로그인한 유저를 가져옴
+    post = Post.objects.filter(likes=user.id)
+    return render(request, 'posts/favourites.html', {'post': post})
+

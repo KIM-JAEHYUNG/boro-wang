@@ -18,7 +18,12 @@ class ImageAdmin(admin.ModelAdmin):
     list_display = (
         'image',
         'title',
+        'content',
+        'price',
+        'location',
         'user',
+        'shows',
+        'areas',
         'view_count',
         'created_at',
         'updated_at',
