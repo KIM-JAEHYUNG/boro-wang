@@ -1,9 +1,8 @@
 {% load static %}
 
-
 <div class="container" style="margin-top: 50px; margin-bottom: 200px;">
     <div class="row">
-        {% for posts in post %}
+        {% for post in posts %}
         <!-- <div class="col-12"> -->
         <div class="card col-4" style="width: 18rem; margin-top: 30px; margin-right:20px; box-shadow: 0 5px 9px 0 rgba(251, 162, 0, 0.64);
             max-width: 400px;
@@ -17,10 +16,10 @@
                 <span class="card-title writer" style="color: orange;
                     font-size: 18px;
                     text-align: left;
-                    font-family: 'Jua', sans-serif;">글쓴이 : {{ posts.user.username }}<br></span>
-                {% if user != posts.user %}
-                {% if user in posts.user.followers.all %}
-                <a href="{% url 'users:follow_toggle' posts.user.id %}" class="btn btn-warning right" style=" border: none;
+                    font-family: 'Jua', sans-serif;">글쓴이 : {{ post.user.username }}<br></span>
+                {% if user != post.user %}
+                {% if user in post.user.followers.all %}
+                <a href="{% url 'users:follow_toggle' post.user.id %}" class="btn btn-warning right" style=" border: none;
                             outline: 0;
                             display: inline-block;
                             padding: 4px;
@@ -33,7 +32,7 @@
                             border-radius: 30px;
                             font-family: 'Jua', sans-serif;">팔로우 취소</a>
                 {% else %}
-                <a href="{% url 'users:follow_toggle' posts.user.id %}" class="btn btn-warning  right" style=" border: none;
+                <a href="{% url 'users:follow_toggle' post.user.id %}" class="btn btn-warning  right" style=" border: none;
                             outline: 0;
                             display: inline-block;
                             padding: 4px;
@@ -47,7 +46,7 @@
                             font-family: 'Jua', sans-serif;">팔로우</a>
                 {% endif %}
                 {% endif %}
-                <a href="{% url 'posts:show' posts.pk %}" class="btn btn-warning right" style=" border: none;
+                <a href="{% url 'posts:show' post.pk %}" class="btn btn-warning right" style=" border: none;
                     outline: 0;
                     display: inline-block;
                     padding: 4px;
@@ -59,8 +58,8 @@
                     font-size: 13px;
                     border-radius: 30px;
                     font-family: 'Jua', sans-serif;">상세보기</a>
-                {% if user == posts.user %}
-                <a href="{% url 'posts:delete' posts.pk %}" class="btn btn-warning  right" style=" border: none;
+                {% if user == post.user %}
+                <a href="{% url 'posts:delete' post.pk %}" class="btn btn-warning  right" style=" border: none;
                     outline: 0;
                     display: inline-block;
                     padding: 4px;
@@ -72,7 +71,7 @@
                     font-size: 13px;
                     border-radius: 30px;
                     font-family: 'Jua', sans-serif;">삭제</a>
-                <a href="{% url 'posts:edit' posts.pk %}" class="btn btn-warning  right" style=" border: none;
+                <a href="{% url 'posts:edit' post.pk %}" class="btn btn-warning  right" style=" border: none;
                     outline: 0;
                     display: inline-block;
                     padding: 4px;
@@ -86,23 +85,26 @@
                     font-family: 'Jua', sans-serif;">수정</a>
                 {% endif %}
             </div>
-            {% if posts.image %}
-            <img src="{{ posts.image.url }}" class="card-img-top" alt="...">
+            {% if post.image %}
+            <div class="main_card_img">
+                <img src="{{ post.image.url }}" class="card-img-top" alt="...">
+            </div>
             {% endif %}
             <div class="card-body">
-                <h5 class="card-title">{{ posts.title }}</h5>
-                <h5 class="card-title">장소 : {{ posts.location }}</h5>
-                <h5 class="card-title">가격 : {{ posts.price }}</h5>
-                {{ posts.likes_count }}명이 좋아합니다.
-                {% if user in posts.likes.all %}
-                <a href="{% url 'posts:like_toggle' posts.id %}">좋아요 취소</a>
+                <h5 class="card-title">{{ post.title }}</h5>
+                <h5 class="card-title">장소 : {{ post.location }}</h5>
+                <h5 class="card-title">가격 : {{ post.price }}</h5>
+                {{ post.likes_count }}명이 좋아합니다.
+                {% if user in post.likes.all %}
+                <a href="{% url 'posts:like_toggle' post.id %}">좋아요 취소</a>
                 {% else %}
-                <a href="{% url 'posts:like_toggle' posts.id %}">좋아요</a>
+                <a href="{% url 'posts:like_toggle' post.id %}">좋아요</a>
                 {% endif %}
 
 
-
-                <p class="card-text" style="margin-top: 30px;  margin: 15px;">{{ posts.content }}</p>
+                <div class="main_card_content">
+                    <p class="card-text" style="margin-top: 30px;  margin: 15px;">{{ post.content }}</p>
+                </div>
                 <p class="star_rating" style=" display: block; width: 25%; margin-top: 6px; color: orange;">
                     <a href="#" class="on">★</a>
                     <a href="#">★</a>
