@@ -1,8 +1,8 @@
 {% load static %}
 
 <div class="wrapper" style="background-color : white;">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;">
-
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: white;"
+        style="box-shadow: 5px 2px 15px #000;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -10,34 +10,44 @@
         <header>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
-                    <li class="nav-item active" style="background-color: white; height:50px">
+                    <li class="nav-item active" style="background-color: white; height:50px; margin-left: 80px;">
                         <a class="nav-link" href="{% url 'home' %}">
-                            <h1> 보러왕 </h1>
+                            <h1 style="font-size: 70px; line-height: 70px;">보러왕 </h1>
                         </a>
                     </li>
                     {% if request.user.is_authenticated %}
-                    <ul class="menu" style="color : orange;">
+                    <ul class="menu" style="color : orange; margin-left: 550px;">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color : orange;">{{ request.user }}님 반갑습니다</a>
+                            <a class="nav-link" href="#" style="color : orange; font-size: 20px;">{{ request.user }}님
+                                반갑습니다</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color : orange;" href="{% url 'posts:new' %}">글 쓰기</a>
+                            <a class="nav-link" style="color : orange; font-size: 20px;" href="{% url 'posts:new' %}">글
+                                쓰기</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color : orange;" href="{% url 'posts:favourites' %}">내가 좋아요한 글</a>
+                            <a class="nav-link" style="color : orange; font-size: 20px;"
+                                href="{% url 'posts:favourites' %}">내가 좋아요한 글</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color : orange;" href="{% url 'account_logout' %}">로그아웃</a>
+                            <a class="nav-link" style="color : orange; font-size: 20px;"
+                                href="{% url 'account_logout' %}">로그아웃</a>
                         </li>
                     </ul>
 
                     {% else %}
-                    <ul class="menu" style="color : orange;" padding-left: "10px">
+                    <ul class="menu" style="color : orange; margin-left: 950px;">
                         <li class="nav-item">
-                            <a class="nav-link" style="color : orange;" href="{% url 'account_login' %}">로그인</a>
+                            <a class="nav-link" style="color : orange; font-size: 20px;"
+                                href="{% url 'account_login' %}">로그인</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" style="color : orange;" href="{% url 'account_signup' %}">회원가입</a>
+                            <a class="nav-link" style="color : orange; font-size: 20px;"
+                                href="{% url 'account_signup' %}">회원가입</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color : orange; font-size: 20px;"
+                                href="{% url 'brwfb' %}">개발자들</a>
                         </li>
                     </ul>
 
@@ -57,7 +67,7 @@
         background-color: white;
         border: 1px solid #253342;
         /* 도시 선택 페이지 메뉴에 밑부분 그림자 주는거 */
-        box-shadow: 3px 0px 10px #000;
+        box-shadow: 4px 0px 10px #000;
         position: fixed;
         width: 100%;
         z-index: 9999;

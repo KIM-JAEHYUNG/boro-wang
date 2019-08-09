@@ -51,9 +51,10 @@
 
   {% include "socialaccount/snippets/login_extra.html" %}
 
-  {% else %} <!--우리는 소셜 로그인 있어서 else문 안돌아감-->
+  {% else %}
+  <!--우리는 소셜 로그인 있어서 else문 안돌아감-->
   <p>{% blocktrans %}If you have not created an account yet, then please
-  <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
   {% endif %}
 
   <form class="login" method="POST" action="{% url 'account_login' %}">
