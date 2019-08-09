@@ -283,6 +283,5 @@ pip-selfcheck.json
 sns/media/
 db.sqlite3
 .pytest_cache/
-
-
+static_root/
 
